@@ -1,164 +1,44 @@
 'use client'
+import React from 'react';
+import { Box, Flex, Image, Text } from '@chakra-ui/react';
 
-import {
-  Box,
-  Flex,
-  Heading,
-  Text,
-  Stack,
-  Container,
-  Avatar,
-  useColorModeValue,
-} from '@chakra-ui/react'
-
-interface Props {
-  children: React.ReactNode
-}
-
-const Testimonial = (props: Props) => {
-  const { children } = props
-
-  return <Box>{children}</Box>
-}
-
-const TestimonialContent = (props: Props) => {
-  const { children } = props
-
+const Page = () => {
   return (
-    <Stack
-      bg={useColorModeValue('white', 'gray.800')}
-      boxShadow={'lg'}
-      p={8}
-      rounded={'xl'}
-      align={'center'}
-      pos={'relative'}
-      _after={{
-        content: `""`,
-        w: 0,
-        h: 0,
-        borderLeft: 'solid transparent',
-        borderLeftWidth: 16,
-        borderRight: 'solid transparent',
-        borderRightWidth: 16,
-        borderTop: 'solid',
-        borderTopWidth: 16,
-        borderTopColor: useColorModeValue('white', 'gray.800'),
-        pos: 'absolute',
-        bottom: '-16px',
-        left: '50%',
-        transform: 'translateX(-50%)',
-      }}>
-      {children}
-    </Stack>
-  )
-}
-
-const TestimonialHeading = (props: Props) => {
-  const { children } = props
-
-  return (
-    <Heading as={'h3'} fontSize={'xl'}>
-      {children}
-    </Heading>
-  )
-}
-
-const TestimonialText = (props: Props) => {
-  const { children } = props
-
-  return (
-    <Text
-      textAlign={'center'}
-      color={useColorModeValue('gray.600', 'gray.400')}
-      fontSize={'sm'}>
-      {children}
-    </Text>
-  )
-}
-
-const TestimonialAvatar = ({
-  src,
-  name,
-  title,
-}: {
-  src: string
-  name: string
-  title: string
-}) => {
-  return (
-    <Flex align={'center'} mt={8} direction={'column'}>
-      <Avatar src={src} mb={2} />
-      <Stack spacing={-1} align={'center'}>
-        <Text fontWeight={600}>{name}</Text>
-        <Text fontSize={'sm'} color={useColorModeValue('gray.600', 'gray.400')}>
-          {title}
-        </Text>
-      </Stack>
+    <Flex direction="column" minH="95vh">
+      <Flex flex="1" position="relative">
+        <Image
+          src="/o-nas.jpg" 
+          alt="O Nas"
+          objectFit="cover"
+          w="full"
+          h="full"
+          position="absolute"
+        />
+        <Box
+          position="absolute"
+          left="0"
+          top="50%"
+          transform="translateY(-50%) skew(-10deg)"
+          background="rgba(255, 255, 255, 0.7)"
+          p="2rem"
+          zIndex="2"
+          maxWidth="50%"
+        >
+          <Text
+            transform="skew(10deg)"
+            color="gray.800"
+            fontWeight="bold"
+            fontSize="xl"
+            fontFamily="'Hepta Slab', serif"
+          >
+            {/* TEKST DO ZMIANY */}
+            "Nasz Drób", założony w 1996 r., przeszedł od spółki jawnej do dynamicznie rozwijającej się spółki z o.o. Specjalizujemy się w produkcji wysokiej jakości, zdrowych produktów drobiowych - od świeżego mięsa po wyroby garmażeryjne i wędliny, oferowane w różnych opakowaniach. Dzięki ciągłej modernizacji, od 2003 r. nieustannie podnosimy standardy produkcji i rozszerzamy asortyment, odpowiadając na zmieniające się trendy i potrzeby rynku. Nasz zespół łączy zaangażowanie i innowacyjność, aby dostarczać produkty, które spełniają oczekiwania klientów z całej Europy. Zapraszamy do współpracy i odkrycia naszych smaków.
+          </Text>
+        </Box>
+      </Flex>
     </Flex>
-  )
-}
+  );
+};
 
-export default function WithSpeechBubbles() {
-  return (
-    <Box bg={useColorModeValue('gray.100', 'gray.700')}>
-      <Container maxW={'7xl'} py={16} as={Stack} spacing={12}>
-        <Stack spacing={0} align={'center'}>
-          <Heading>Our Clients Speak</Heading>
-          <Text>We have been working with clients around the world</Text>
-        </Stack>
-        <Stack
-          direction={{ base: 'column', md: 'row' }}
-          spacing={{ base: 10, md: 4, lg: 10 }}>
-          <Testimonial>
-            <TestimonialContent>
-              <TestimonialHeading>Efficient Collaborating</TestimonialHeading>
-              <TestimonialText>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor neque sed
-                imperdiet nibh lectus feugiat nunc sem.
-              </TestimonialText>
-            </TestimonialContent>
-            <TestimonialAvatar
-              src={
-                'https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80'
-              }
-              name={'Jane Cooper'}
-              title={'CEO at ABC Corporation'}
-            />
-          </Testimonial>
-          <Testimonial>
-            <TestimonialContent>
-              <TestimonialHeading>Intuitive Design</TestimonialHeading>
-              <TestimonialText>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor neque sed
-                imperdiet nibh lectus feugiat nunc sem.
-              </TestimonialText>
-            </TestimonialContent>
-            <TestimonialAvatar
-              src={
-                'https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80'
-              }
-              name={'Jane Cooper'}
-              title={'CEO at ABC Corporation'}
-            />
-          </Testimonial>
-          <Testimonial>
-            <TestimonialContent>
-              <TestimonialHeading>Mindblowing Service</TestimonialHeading>
-              <TestimonialText>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor neque sed
-                imperdiet nibh lectus feugiat nunc sem.
-              </TestimonialText>
-            </TestimonialContent>
-            <TestimonialAvatar
-              src={
-                'https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80'
-              }
-              name={'Jane Cooper'}
-              title={'CEO at ABC Corporation'}
-            />
-          </Testimonial>
-        </Stack>
-      </Container>
-    </Box>
-  )
-}
+export default Page;
+
