@@ -47,7 +47,7 @@ export default function Navbar() {
       <Box {...boxBgStyle}>
         <Menu>
           <MenuButton as={Link} mr={4} href="/produkty" fontSize="lg">
-            Produkty <ChevronDownIcon />
+            Produkty
           </MenuButton>
         </Menu>
       </Box>
