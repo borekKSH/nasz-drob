@@ -23,7 +23,7 @@ export default function Footer() {
           <Link href="/kontakt" _hover={{ textDecoration: 'none' }}>
             Kontakt
           </Link>
-          <Link href="https://facebook.com" isExternal _hover={{ textDecoration: 'none' }}>
+          <Link href="https://www.facebook.com/naszdrob" isExternal _hover={{ textDecoration: 'none' }}>
             <FaFacebook />
           </Link>
         </Stack>

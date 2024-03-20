@@ -1,5 +1,5 @@
 'use client'
-import { Flex, Box, Text, useColorModeValue, Link, Menu, MenuButton, MenuList, MenuItem } from '@chakra-ui/react';
+import { Flex, Box, Text, useColorModeValue, Link, Menu, MenuButton, MenuList, MenuItem, Image } from '@chakra-ui/react';
 import { ChevronDownIcon } from '@chakra-ui/icons';
 
 export default function Navbar() {
@@ -15,12 +15,11 @@ export default function Navbar() {
     >
       {/* Logo i link do strony głównej (użyj odpowiedniego linku dla Twojej aplikacji) */}
       <Box mr={10}> {/* Zwiększony odstęp od loga */}
-        <Text fontSize="lg" fontWeight="bold">
-          <Link href="/" _hover={{ textDecoration: 'none' }}>
-            NaszDrob
-          </Link>
-        </Text>
-      </Box>
+  <Link href="/" _hover={{ textDecoration: 'none' }}>
+    <Image src="/logo.svg" alt="NaszDrob" />
+  </Link>
+</Box>
+
 
       {/* Box dla każdej sekcji z opcjami wyboru podstron, oddzielone od siebie */}
       <Menu>
@@ -45,7 +44,6 @@ export default function Navbar() {
         <MenuList>
           <MenuItem as={Link} href="/haccp">System HACCP</MenuItem>
           <MenuItem as={Link} href="/certyfikaty">Certyfikaty</MenuItem>
-          <MenuItem as={Link} href="/wladze">Władze Spółki</MenuItem>
         </MenuList>
       </Menu>
 
