@@ -1,6 +1,6 @@
 "use client"
 import React from 'react';
-import { Box, Button, VStack, Text, Image, Flex, Spacer } from '@chakra-ui/react';
+import { Flex, VStack, Text, useBreakpointValue, Box } from '@chakra-ui/react';
 
 interface Hero {
   title: string;
@@ -9,35 +9,43 @@ interface Hero {
 
 const HeroSection: React.FC<Hero> = ({ title, subtitle }) => {
   return (
-    <Flex direction="column" minH="95vh"> 
-      <Box flex="1" position="relative"> 
-        <Image
-          src="/hero.jpg" 
-          alt="Pyszny Kurczaczek z Rodzinką"
-          objectFit="cover"
-          w="full"
-          h="full"
-          position="absolute"
-        />
+    <Flex
+      w="full"
+      h="100vh"
+      backgroundImage="/hero.jpg"
+      backgroundSize="cover"
+      backgroundPosition="center center"
+      align="center"
+      justify="center"
+    >
+      <Box
+        px={useBreakpointValue({ base: 4, md: 8 })}
+        py="4"
+        bgGradient="linear(to-r, blackAlpha.600, transparent)"
+        backdropFilter="blur(5px)"
+        borderRadius="lg"
+        textAlign="center" 
+      >
         <VStack
-          position="absolute" 
-          top="50%" 
-          left="50%" 
-          transform="translate(-50%, -50%)" 
-          spacing="4"
-          color="white" 
-          maxW="600px"
-          textAlign="center" 
-          p="4" // 
-          bg="blackAlpha.500" 
-          borderRadius="lg" 
+          spacing={4}
+          align="stretch" 
+          justify="center" 
         >
-          <Text fontSize="5xl" fontWeight="bold" as="h1">
+          <Text
+            color="white"
+            fontWeight="bold"
+            fontSize={useBreakpointValue({ base: "2xl", md: "5xl", lg: "6xl" })}
+          >
             {title || "...Smaczny Polski Nasz"}
           </Text>
-          <Text fontSize="xl" as="p">
-            {subtitle || "Zasmakuj w naszym drobiu"}
-          </Text>
+          <Box w="full" display="flex" alignItems="center" justifyContent="center">
+            <Text
+              color="white"
+              fontSize={useBreakpointValue({ base: "md", md: "xl", lg: "2xl" })}
+            >
+              {subtitle || "Zasmakuj w naszym drobiu"}
+            </Text>
+          </Box>
         </VStack>
       </Box>
     </Flex>
