@@ -2,7 +2,7 @@
 import React from 'react';
 import { Box, Flex, Text, useBreakpointValue } from '@chakra-ui/react';
 
-const Page = () => {
+const ONAS = () => {
   const fontSize = useBreakpointValue({ base: 'sm', md: 'md', lg: 'lg' });
   const boxWidth = useBreakpointValue({ base: '90%', md: '80%', lg: '50%' });
   const boxPadding = useBreakpointValue({ base: '6', md: '8' });
@@ -28,11 +28,11 @@ const Page = () => {
         padding={boxPadding}
         background="rgba(255, 255, 255, 0.8)"
         backdropFilter="blur(10px)"
-        borderRadius="2xl" 
-        boxShadow="xl" 
+        borderRadius="2xl"
+        boxShadow="xl"
         zIndex="2"
-        textAlign="center" 
-        overflow="hidden" 
+        textAlign="center"
+        overflow="hidden"
       >
         <Text
           color="gray.800"
@@ -40,11 +40,11 @@ const Page = () => {
           fontSize={fontSize}
           fontFamily="'Hepta Slab', serif"
         >
-          "Nasz Drób", założony w 1996 r., przeszedł od spółki jawnej do dynamicznie rozwijającej się spółki z o.o. Specjalizujemy się w produkcji wysokiej jakości, zdrowych produktów drobiowych - od świeżego mięsa po wyroby garmażeryjne i wędliny, oferowane w różnych opakowaniach. Dzięki ciągłej modernizacji, od 2003 r. nieustannie podnosimy standardy produkcji i rozszerzamy asortyment, odpowiadając na zmieniające się trendy i potrzeby rynku. Nasz zespół łączy zaangażowanie i innowacyjność, aby dostarczać produkty, które spełniają oczekiwania klientów z całej Europy. Zapraszamy do współpracy i odkrycia naszych smaków.
+          &quot;Nasz Drób&quot;, założony w 1996 r., przeszedł od spółki jawnej do dynamicznie rozwijającej się spółki z o.o. Specjalizujemy się w produkcji wysokiej jakości, zdrowych produktów drobiowych - od świeżego mięsa po wyroby garmażeryjne i wędliny, oferowane w różnych opakowaniach. Dzięki ciągłej modernizacji, od 2003 r. nieustannie podnosimy standardy produkcji i rozszerzamy asortyment, odpowiadając na zmieniające się trendy i potrzeby rynku. Nasz zespół łączy zaangażowanie i innowacyjność, aby dostarczać produkty, które spełniają oczekiwania klientów z całej Europy. Zapraszamy do współpracy i odkrycia naszych smaków.
         </Text>
       </Box>
     </Flex>
   );
 };
 
-export default Page;
+export default ONAS;
