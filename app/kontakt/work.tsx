@@ -1,11 +1,11 @@
 "use client"
 import React, { useState } from 'react';
-import { ChakraProvider, Box, Flex, VStack, Text, Link, theme } from '@chakra-ui/react';
+import { ChakraProvider, Box, Flex, VStack, Text, theme } from '@chakra-ui/react';
 import Head from 'next/head';
 
 interface ClickableBoxProps {
   title: string;
-  content: React.ReactNode; 
+  content: string;
   onClick: () => void;
 }
 
@@ -18,15 +18,15 @@ const ClickableBox: React.FC<ClickableBoxProps> = ({ title, content, onClick }) 
       p={3}
       textAlign="center"
       fontSize="md"
-      bg="rgba(255, 255, 255, 0.7)"
+      bg="rgba(255, 255, 255, 0.7)" 
       boxShadow="md"
-      _hover={{ bg: "rgba(255, 255, 255, 0.8)" }}
+      _hover={{ bg: "rgba(255, 255, 255, 0.8)" }} 
       m={2}
       display="flex"
       alignItems="center"
       justifyContent="center"
-      w="200px"
-      h="60px"
+      w="200px" 
+      h="60px" 
       color="gray.800"
       fontWeight="bold"
     >
@@ -36,33 +36,13 @@ const ClickableBox: React.FC<ClickableBoxProps> = ({ title, content, onClick }) 
 };
 
 const Home: React.FC = () => {
-  const [selectedContent, setSelectedContent] = useState<React.ReactNode | null>(null);
+  const [selectedContent, setSelectedContent] = useState<string | null>(null);
 
   const bgImage = 'url("/contact.jpg")'; 
 
-  const handleBoxClick = (content: React.ReactNode) => {
+  const handleBoxClick = (content: string) => {
     setSelectedContent(content);
   };
-
-  const officeContent = (
-    <>
-      <Text>Nasz Drób Sp z o. o.</Text>
-      <Text>Ujrzanów 77, 08-110 Siedlce</Text>
-      <Text>tel. <Link href="tel:+48256449524" isExternal>25 644 95 24</Link></Text>
-      <Text>email: <Link href="mailto:biuro@nasz-drob.pl" isExternal>biuro@nasz-drob.pl</Link></Text>
-    </>
-  );
-
-  const shopContent = (
-    <>
-      <Text>Sklepy Firmowe</Text>
-      <Text>Sklep przyzakładowy</Text>
-      <Text>Ujrzanów 77, 08-110 Siedlce</Text>
-      <Text>Tel. <Link href="tel:+48256449524" isExternal>25 644 95 24 wew. 122</Link></Text>
-      <Text>Godziny otwarcia:</Text>
-      <Text>pn - pt: 8-18</Text>
-    </>
-  );
 
   return (
     <>
@@ -82,14 +62,14 @@ const Home: React.FC = () => {
           p={4}
         >
           <VStack spacing={4} align="center" w="full">
-            <ClickableBox title="BIURO" content={officeContent} onClick={() => handleBoxClick(officeContent)} />
+            <ClickableBox title="Biuro" content="Tutaj znajdziesz informacje o naszym biurze." onClick={() => handleBoxClick("Tutaj znajdziesz informacje o naszym biurze.")} />
             <ClickableBox title="Działy Sprzedaży Finansowy Ruchu" content="Informacje o działach sprzedaży, finansów i ruchu." onClick={() => handleBoxClick("Informacje o działach sprzedaży, finansów i ruchu.")} />
-            <ClickableBox title="Sklep" content={shopContent} onClick={() => handleBoxClick(shopContent)} />
+            <ClickableBox title="Sklep" content="Dowiedz się więcej o naszej ofercie sklepowej." onClick={() => handleBoxClick("Dowiedz się więcej o naszej ofercie sklepowej.")} />
           </VStack>
           {selectedContent && (
-            <Box mt={6} p={4} bg="rgba(255, 255, 255, 0.8)" borderRadius="md" boxShadow="base" color="gray.800" w="200px" textAlign="center">
+            <Text mt={6} p={4} bg="rgba(255, 255, 255, 0.8)" borderRadius="md" boxShadow="base" color="gray.800" w="200px" textAlign="center">
               {selectedContent}
-            </Box>
+            </Text>
           )}
         </Flex>
       </ChakraProvider>

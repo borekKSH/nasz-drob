@@ -40,7 +40,7 @@ const ONAS = () => {
           fontSize={fontSize}
           fontFamily="'Hepta Slab', serif"
         >
-          &quot;Nasz Drób&quot;, założony w 1996 r., przeszedł od spółki jawnej do dynamicznie rozwijającej się spółki z o.o. Specjalizujemy się w produkcji wysokiej jakości, zdrowych produktów drobiowych - od świeżego mięsa po wyroby garmażeryjne i wędliny, oferowane w różnych opakowaniach. Dzięki ciągłej modernizacji, od 2003 r. nieustannie podnosimy standardy produkcji i rozszerzamy asortyment, odpowiadając na zmieniające się trendy i potrzeby rynku. Nasz zespół łączy zaangażowanie i innowacyjność, aby dostarczać produkty, które spełniają oczekiwania klientów z całej Europy. Zapraszamy do współpracy i odkrycia naszych smaków.
+          &quot;Nasz Drób&quot;, założony w 1996 r., przeszedł od spółki jawnej do dynamicznie rozwijającej się spółki z o.o. Specjalizujemy się w produkcji wysokiej jakości, zdrowych produktów drobiowych - od świeżego mięsa po wyroby garmażeryjne i wędliny, oferowane w różnych opakowaniach. Dzięki ciągłej modernizacji, od 2003 r. nieustannie podnosimy standardy produkcji i rozszerzamy asortyment, odpowiadając na zmieniające się trendy i potrzeby rynku. Nasz zespół łączy zaangażowanie i innowacyjność, aby dostarczać produkty, które spełniają oczekiwania klientów z całej Europy.
         </Text>
       </Box>
     </Flex>
