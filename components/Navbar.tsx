@@ -80,9 +80,6 @@ function MenuItems({ menuItemStyle }: MenuItemsProps) {
           <MenuItem as={Link} href="/o-nas" _hover={menuItemStyle._hover}>
             O nas
           </MenuItem>
-          <MenuItem as={Link} href="/certyfikaty" _hover={menuItemStyle._hover}>
-            Certyfikaty
-          </MenuItem>
         </MenuList>
       </Menu>
 
